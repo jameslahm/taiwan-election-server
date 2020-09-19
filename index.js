@@ -134,6 +134,6 @@ app.post('/upload', authenticate, upload.single('file'), (req, res) => {
 	res.json({ url: `/static/${req.file.filename}` });
 });
 
-app.listen(12345, () => {
-	console.log('Listening at http://localhost:12345');
-});
+app.listen(process.env.PORT || 5000, () => {
+	console.log(`Listening at http://localhost:${process.env.PORT || 5000}`);
+}); 
