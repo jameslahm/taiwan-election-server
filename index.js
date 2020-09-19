@@ -131,7 +131,7 @@ app.get('/electors/:id', authenticate, (req, res) => {
 });
 
 app.post('/upload', authenticate, upload.single('file'), (req, res) => {
-	res.json({ url: `static/${req.file.filename}` });
+	res.json({ url: `/static/${req.file.filename}` });
 });
 
 app.listen(12345, () => {
